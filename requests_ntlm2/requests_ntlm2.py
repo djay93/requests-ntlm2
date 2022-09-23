@@ -109,11 +109,11 @@ class HttpNtlmAuth(AuthBase):
             request.headers["Cookie"] = response2.headers.get("set-cookie")
 
         # get the challenge
-        ntlm_context.set_challenge_from_header(response2.headers[auth_header_field])
+        # ntlm_context.set_challenge_from_header(response2.headers[auth_header_field])
 
         # build response
         # Get the response based on the challenge message
-        request.headers[auth_header] = ntlm_context.get_authenticate_header()
+        # request.headers[auth_header] = ntlm_context.get_authenticate_header()
         response3 = response2.connection.send(request, **kwargs)
 
         # Update the history.
